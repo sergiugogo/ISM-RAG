@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+chroma_store/
+uploads/
+processed_files.json
+*.env
