@@ -2,7 +2,7 @@
 *A Retrieval-Augmented Generation (RAG) system with OCR and AI-driven document understanding.*
 
 > Built by **Innovative Software & Models SRL (ISM)**  
-> 🧠 Designed and developed by **Mozeș Ioan Andrei**
+> 🧠 Designed and developed by **Mogosan Sergiu-Ionut**
 
 ---
 
