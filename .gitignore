@@ -1,6 +1,42 @@
+# Virtual environments
 .venv/
+venv/
+env/
+
+# Python cache
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Vector database
 chroma_store/
+
+# Uploaded files
 uploads/
+
+# Processing metadata
 processed_files.json
+
+# Environment variables
 *.env
+.env.local
+
+# Documentation (except README)
+ENTERPRISE_DEPLOYMENT.md
+ENTERPRISE_QUICKSTART.md
+REMAX_EXECUTIVE_SUMMARY.md
+DEMO_VS_ENTERPRISE.md
+UPDATE_SUMMARY.md
+GIT_COMMIT_GUIDE.md
+
+# Test scripts
+backend/test_*.py
+backend/check_*.py
+backend/debug_*.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

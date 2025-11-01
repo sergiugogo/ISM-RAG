@@ -37,7 +37,27 @@ if st.button("🔍 Obține răspuns"):
             if response.status_code == 200:
                 data = response.json()
                 st.markdown(f"### ✅ Răspuns: \n> {data['answer']}")
-                with st.expander("📚 Context folosit"):
-                    st.text(data["context"])
+                
+                # Display sources if available
+                if data.get("sources"):
+                    with st.expander(f"📚 Surse ({len(data['sources'])} documente)"):
+                        for source in data["sources"]:
+                            st.markdown(f"### 📄 {source.get('filename', 'Unknown')}")
+                            
+                            # Display pages
+                            if source.get('pages'):
+                                pages_str = ", ".join(map(str, source['pages']))
+                                st.markdown(f"- **Pagini:** {pages_str}")
+                            
+                            # Display number of relevant chunks
+                            if source.get('num_chunks'):
+                                st.markdown(f"- **Secțiuni relevante:** {source['num_chunks']}")
+                            
+                            # Display relevance
+                            if source.get('relevance') is not None:
+                                relevance_pct = source['relevance'] * 100
+                                st.markdown(f"- **Relevanță:** {relevance_pct:.1f}%")
+                            
+                            st.markdown("---")
             else:
                 st.error(f"Eroare: {response.text}")

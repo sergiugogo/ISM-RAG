@@ -1,0 +1,49 @@
+# Core dependencies (already in requirements.txt)
+fastapi==0.119.0
+uvicorn==0.37.0
+python-multipart==0.0.20
+python-dotenv==1.1.1
+PyPDF2==3.0.1
+sentence-transformers==5.1.1
+ollama==0.6.0
+chromadb==1.1.1
+langchain==0.3.27
+langchain-text-splitters==0.3.11
+pydantic==2.12.1
+
+# Production additions
+pyyaml==6.0.3  # For YAML configuration
+gunicorn==21.2.0  # Production WSGI server
+slowapi==0.1.9  # Rate limiting
+redis==5.0.1  # Caching layer
+
+# Optional Vector Databases (install as needed)
+# qdrant-client==1.7.0  # For Qdrant
+# pinecone-client==3.0.0  # For Pinecone
+# weaviate-client==4.4.0  # For Weaviate
+
+# Optional LLM providers
+# openai==1.12.0  # For OpenAI
+# anthropic==0.18.0  # For Claude
+
+# Monitoring & Logging
+prometheus-client==0.19.0
+python-json-logger==2.0.7
+
+# Database (for metadata storage)
+# psycopg2-binary==2.9.9  # PostgreSQL
+# sqlalchemy==2.0.44  # Already included
+
+# Task Queue (for distributed processing)
+# celery==5.3.4
+# kombu==5.3.5
+
+# Testing
+pytest==8.0.0
+pytest-asyncio==0.23.4
+httpx==0.28.1
+
+# Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==5.0.0  # Already included

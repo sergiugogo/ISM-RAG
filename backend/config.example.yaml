@@ -1,0 +1,43 @@
+# RAG Configuration Example
+# Copy this to config.yaml and customize for your deployment
+
+vector_db:
+  # Options: chromadb, pinecone, weaviate, qdrant
+  provider: "chromadb"
+  
+  # ChromaDB (local/demo)
+  persist_directory: "../chroma_store"
+  
+  # For cloud vector DBs (Pinecone, Weaviate, Qdrant)
+  # api_key: "your-api-key-here"
+  # host: "your-host-url"
+  
+  index_name: "remax_documents"
+  dimension: 384  # Must match embedding model dimension
+
+embedding:
+  # Sentence transformer model
+  # Options: all-MiniLM-L6-v2 (384 dim), all-mpnet-base-v2 (768 dim)
+  model_name: "all-MiniLM-L6-v2"
+  batch_size: 32
+  device: "cpu"  # Options: cpu, cuda, mps
+
+llm:
+  # Options: ollama, openai, anthropic, azure
+  provider: "ollama"
+  model_name: "gpt-oss:120b"
+  api_key: "${OLLAMA_API_KEY}"  # Use env var
+  host: "https://ollama.com"
+  temperature: 0.1
+  max_tokens: 1000
+
+processing:
+  chunk_size: 800
+  chunk_overlap: 100
+  max_workers: 4  # Adjust based on CPU cores
+  batch_insert_size: 100
+  enable_ocr: true
+
+top_k_results: 5
+upload_directory: "uploads"
+processed_files_path: "processed_files.json"
